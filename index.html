@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Milhas do Bandas</title>
     <style>
         .container{
             width: 100vw;
@@ -46,11 +46,30 @@
             input{
         
                 width: 80%;
-                height: 6%;
+                height: 8%;
 
                 border-radius: 3px;
                 text-align: center;
                 font-size: large;
+            }
+            #reais{
+                background-color: rgb(189, 182, 182);
+                color: black;
+            }
+            select{
+                width: 60%;
+                height: 6%;
+                text-align: center;
+                margin: 8%;
+                option:first{
+                    background-color: black;
+                }
+                
+            }
+            option:first{
+                background-color: aqua;
+
+                color: rgb(179, 6, 6);
             }
         }
             
@@ -59,14 +78,29 @@
             margin: 0px;
         }
     </style>
-
+    
 </head>
 <body>
+    <script 
+        type="text/javascript" 
+        src="calc.js">
+    </script>
     <div class="container">
         <div class="box">
             <h1>Calculadora de Milhas</h1>
-            <p>Milhas</p>
-            <input type="text" placeholder="Milhas">
+            
+            
+            <input onchange="calcular()" id="milhas" type="number" placeholder="Milhas">
+            
+            <input id="reais" value="R$ 0.00" style="margin-top: 10%;" type="text" disabled>
+            
+            <select required>
+                <option>Selecione uma companhia aérea</option>
+                <option value="latam">Latam</option>
+                <option value="gol">Gol</option>
+                <option value="azul">Azul</option>
+            </select>
+            
         </div>
     </div>
 </body>
