@@ -5,53 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-
-        .container {
+        .container{
             width: 100vw;
             height: 100vh;
-            background: #6C7A89;
+
             display: flex;
             flex-direction: row;
-            justify-content: center;
             align-items: center;
-        }
-        .box {
+            justify-content: center;
+
+            background-color: rgb(43, 36, 36);
+
+        .box{
             width: 30%;
-            height: 80%;
-            background: #fff;
-        
+            height: 60%;
+
+            background-color: rgb(75, 70, 70);
             text-align: center;
+            border-radius: 10px;
+            box-shadow: -3px -3px rgb(170, 112, 3);
             
-            border-radius: 40px;
+            
+            h1{
+                color: white;
+                text-shadow: 2px 2px black;
+            }
             p{
-                font-size: larger;
+                margin-left: 40%;
+                margin-right: 40%;
+
+                background-color: rgb(114, 112, 112);
+                
+                padding-top: 2%;
+                padding-bottom: 2%;
+                border-radius: 5px;
+                font-size: large;
+                
+                
             }
             input{
+        
                 width: 80%;
-                height: 8%;
-                border-radius: 5px;
+                height: 6%;
 
+                border-radius: 3px;
                 text-align: center;
-                font-size: larger;
+                font-size: large;
             }
-
+        }
             
         }
-        body {
+        body{
             margin: 0px;
         }
-
-
     </style>
+
 </head>
 <body>
     <div class="container">
         <div class="box">
-            <p>Calculadora de milhas</p>
-            
-            <input type="text" placeholder="Milheiros">
+            <h1>Calculadora de Milhas</h1>
+            <p>Milhas</p>
+            <input type="text" placeholder="Milhas">
         </div>
     </div>
-    
 </body>
 </html>
