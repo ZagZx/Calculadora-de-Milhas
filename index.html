@@ -15,7 +15,7 @@
     
     <div class="container">
         
-        
+        <a href="update/update.html"><h2>Atualizar Valores</h2></a>
         <div class="box">
             <h1>Calculadora de Milhas</h1>
             
@@ -24,8 +24,8 @@
             
             <input id="reais" value="R$ 0.00" style="margin-top: 10%;" type="text" disabled>
             
-            <select required>
-                <option hidden selected>Selecione uma companhia aérea</option>
+            <select onclick="" onchange="calcular()" id="companhia" required>
+                <option hidden selected value="nulo">Selecione uma companhia aérea</option>
                 <option value="latam">Latam</option>
                 <option value="gol">Gol</option>
                 <option value="azul">Azul</option>
