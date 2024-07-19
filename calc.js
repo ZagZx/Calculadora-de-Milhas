@@ -16,6 +16,4 @@ async function calcular(){
     var calculo = (jsonf['azul'] * (milhas.value /1000)).toFixed(2)
     
     reais.value = 'R$ ' + String(calculo)
-    
-    
 }
