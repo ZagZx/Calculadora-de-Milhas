@@ -4,8 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-    HEHE
+    
+    <script src="upjson.js" type="text/javascript"></script>
+    <script>document.addEventListener('DOMContentLoaded', async function atualiza(){
+        const valores = await getjson()
+        
+        const latam = document.getElementById('latam')
+        const gol = document.getElementById('gol')
+        const azul = document.getElementById('azul')
+        
+        latam.innerText = 'Latam: R$' + String(valores["latam"].toFixed(2))
+        gol.innerText = 'Gol: R$' + String(valores["gol"].toFixed(2))
+        azul.innerText = 'Azul: R$' + String(valores["azul"].toFixed(2))
+
+    })</script>
+    
+    <div class="container">
+        <a href="../index.html"><h2>Calculadora</h2></a>
+
+        <div class="box">
+            <h1>Valor do milheiro</h1>
+            
+            <p id="latam"></p>
+            <input placeholder="Atualize aqui o valor do milheiro" type="number" id="latam_input">
+            <p id="gol"></p>
+            <input placeholder="Atualize aqui o valor do milheiro" type="number" id="gol_input">
+            <p id="azul"></p>
+            <input placeholder="Atualize aqui o valor do milheiro" type="number" id="azul_input">
+            
+            <button onclick="postjson()">Atualizar</button>
+        </div>
+    </div>
 </body>
 </html>

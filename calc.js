@@ -1,5 +1,5 @@
 function getjson(){
-    return fetch('./prices.json')
+    return fetch('https://calculadora-de-milhas-aef3f-default-rtdb.firebaseio.com/.json')
     .then(response => {
         
         return response.json();
@@ -9,8 +9,6 @@ function getjson(){
 }
 function piscar_cor(){
     milhas.style.color = 'black'
-    
-
 }
 
 async function calcular(){

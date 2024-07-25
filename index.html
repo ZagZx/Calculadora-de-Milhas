@@ -4,14 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Milhas do Bandas</title>
+
     <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
     <script 
         type="text/javascript" 
         src="calc.js">
     </script>
-    
+    <script>
+        document.addEventListener('DOMContentLoaded', async function optiontext(){
+            const json = await getjson()
+            const latam = document.getElementById('latam')
+            const gol = document.getElementById('gol')
+            const azul = document.getElementById('azul')
+
+            latam.innerText = 'Latam: R$' + String(json['latam'])
+            gol.innerText =  'Gol: R$' + String(json['gol'])
+            azul.innerText =  'Azul: R$' + String(json['azul'])
+
+        })
+    </script>
     
     <div class="container">
         
@@ -19,16 +33,16 @@
         <div class="box">
             <h1>Calculadora de Milhas</h1>
             
-            
-            <input onchange="calcular()" id="milhas" type="number" placeholder="Milheiros">
+            <input oninput="calcular()" id="milhas" type="number" placeholder="Milhas">
             
             <input id="reais" value="R$ 0.00" style="margin-top: 10%;" type="text" disabled>
             
-            <select onclick="" onchange="calcular()" id="companhia" required>
+            <select onchange="calcular()" id="companhia" required>
                 <option hidden selected value="nulo">Selecione uma companhia aérea</option>
-                <option value="latam">Latam</option>
-                <option value="gol">Gol</option>
-                <option value="azul">Azul</option>
+
+                <option id="latam" value="latam"></option>
+                <option id="gol" value="gol"></option>
+                <option id="azul" value="azul"></option>
             </select>
             
         </div>
