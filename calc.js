@@ -14,14 +14,19 @@ function piscar_cor(){
 async function calcular(){
     const milhas = document.getElementById('milhas')
     const reais = document.getElementById('reais')
+    const taxainput = document.getElementById('taxa')
     const select = document.getElementById('companhia')
+
+    const taxa = 0.0449
 
     if (select.value != "nulo"){
         const jsonf = await getjson();
     
-        var calculo = (jsonf[select.value] * (milhas.value /1000)).toFixed(2)
-        
+        let calculo = (jsonf[select.value] * (milhas.value /1000)).toFixed(2)
+        let taxacalc = ((jsonf[select.value] * (milhas.value/1000)))
+        taxacalc = (taxacalc + taxacalc * taxa).toFixed(2)
         reais.value = 'R$ ' + String(calculo)
+        taxainput.value =  'R$ ' + String(taxacalc)
 
     }
     else{

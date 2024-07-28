@@ -35,15 +35,18 @@
             
             <input oninput="calcular()" id="milhas" type="number" placeholder="Milhas">
             
-            <input id="reais" value="R$ 0.00" style="margin-top: 10%;" type="text" disabled>
-            
-            <select onchange="calcular()" id="companhia" required>
+            <select style="margin-top: 20px;" onchange="calcular()" id="companhia" required>
                 <option hidden selected value="nulo">Selecione uma companhia aérea</option>
 
                 <option id="latam" value="latam"></option>
                 <option id="gol" value="gol"></option>
                 <option id="azul" value="azul"></option>
             </select>
+            
+            <p>Sem taxa</p>
+            <input class="result" id="reais" value="R$ 0.00" type="text" disabled>
+            <p>Taxa do Bandas</p>
+            <input class="result" type="text" value="R$ 0.00" id="taxa" disabled>
             
         </div>
     </div>
