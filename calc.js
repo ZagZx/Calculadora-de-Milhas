@@ -16,14 +16,15 @@ async function calcular(){
     const reais = document.getElementById('reais')
     const taxainput = document.getElementById('taxa')
     const select = document.getElementById('companhia')
-
+    const taxa_pessoa = document.getElementById('taxa/p')
+    
     const taxa = 0.0449
 
     if (select.value != "nulo"){
         const jsonf = await getjson();
-    
-        let calculo = (jsonf[select.value] * (milhas.value /1000)).toFixed(2)
-        let taxacalc = ((jsonf[select.value] * (milhas.value/1000)))
+        
+        let calculo = ((jsonf[select.value] * (milhas.value /1000)) + Number(taxa_pessoa.value)).toFixed(2)
+        let taxacalc = ((jsonf[select.value] * (milhas.value/1000)) + Number(taxa_pessoa.value))
         taxacalc = (taxacalc + taxacalc * taxa).toFixed(2)
         reais.value = 'R$ ' + String(calculo)
         taxainput.value =  'R$ ' + String(taxacalc)
