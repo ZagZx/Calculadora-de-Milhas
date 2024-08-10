@@ -18,7 +18,8 @@ async function calcular(){
     const select = document.getElementById('companhia')
     const taxa_pessoa = document.getElementById('taxa/p')
     
-    const taxa = 0.0449
+    const taxa_sel = document.getElementById('parcelas')
+    const taxa = Number(taxa_sel.value) / 100
 
     if (select.value != "nulo"){
         const jsonf = await getjson();

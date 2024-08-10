@@ -35,6 +35,9 @@
             
             <input oninput="calcular()" id="milhas" type="number" placeholder="Milhas">
             <input oninput="calcular()" style="margin-top: 3%;height: 4%; width: 70%;" type="number" id="taxa/p" placeholder="Taxa por pessoa">
+            
+            
+
             <select style="margin-top: 20px;" onchange="calcular()" id="companhia" required>
                 <option hidden selected value="nulo">Selecione uma companhia aérea</option>
 
@@ -46,6 +49,16 @@
             <p>Sem taxa</p>
             <input class="result" id="reais" value="R$ 0.00" type="text" disabled>
             <p>Taxa do Bandas</p>
+
+            <select onchange="calcular()" style="margin-bottom: 5%;" id="parcelas">
+                <option hidden value="">Parcelas do Bandas</option>
+                <option value="4.59">2 parcelas</option>
+                <option value="5.97">3 parcelas</option>
+                <option value="7.33">4 parcelas</option>
+                <option value="8.66">5 parcelas</option>
+                <option value="9.67">6 parcelas</option>
+            </select>
+            
             <input class="result" type="text" value="R$ 0.00" id="taxa" disabled>
             
         </div>
